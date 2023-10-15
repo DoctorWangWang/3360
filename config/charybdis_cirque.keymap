@@ -43,9 +43,7 @@
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings =
-                <&kp ESC>,
-                <&kp TAB>;
+            bindings = <&kp ESC>, <&kp TAB>;
         };
     };
 
@@ -57,17 +55,13 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
         };
         modcp: mod_copy {
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_COPY";
             #binding-cells = <0>;
-            bindings =
-                <&as LS(C) C>,
-                <&kp C>;
+            bindings = <&as LS(C) C>, <&kp C>;
 
             mods = <(LGUI | RGUI)>;
         };
@@ -310,7 +304,7 @@
         default_layer {
             label = "DEFAULT";
             bindings = <
-&lt 3 ESC  &kp Q  &lt 1 W       &lt 2 E    &kp R            &kp T      &kp Y       &kp U        &kp I      &mt RIGHT_SHIFT O  &kp P     &lt 3 EQUAL
+&td0       &kp Q  &lt 1 W       &lt 2 E    &kp R            &kp T      &kp Y       &kp U        &kp I      &mt RIGHT_SHIFT O  &kp P     &lt 3 EQUAL
 &kp ENTER  &kp A  &mt LSHFT S   &kp D      &kp F            &kp G      &kp H       &kp J        &kp K      &kp L              &kp SEMI  &kp SQT
 &kp CAPS   &kp Z  &kp X         &kp C      &kp V            &kp B      &kp N       &kp M        &kp COMMA  &kp DOT            &kp FSLH  &kp BSLH
                   &kp LC(C)     &kp LC(V)  &kp BSPC         &kp SPACE  &lt 2 LEFT  &lt 1 RIGHT  &kp LBKT   &kp RBKT
@@ -331,7 +325,10 @@
                       &trans     &none      &kp SEMI  &kp SEMI   &kp UP    &kp DOWN   &none    &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+
             trackball-bindings = <&tsl>;
         };
 
@@ -346,7 +343,9 @@
             >;
 
             trackball-bindings = <&tmv_fine>;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         hotkey_layer {
@@ -360,7 +359,9 @@
             >;
 
             trackball-bindings = <&tmv_x>;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp UP DOWN>;
         };
     };
 };
