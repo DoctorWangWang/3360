@@ -108,26 +108,26 @@
 
         combo_2 {
             timeout-ms = <50>;
-            key-positions = <>;
-            bindings = <&kp N2>;
+            key-positions = <20 25>;
+            bindings = <&kp PLUS>;
         };
 
         combo_3 {
             timeout-ms = <50>;
-            key-positions = <>;
-            bindings = <&kp N3>;
+            key-positions = <13 20>;
+            bindings = <&kp MINUS>;
         };
 
         combo_4 {
             timeout-ms = <50>;
-            key-positions = <>;
-            bindings = <&kp N4>;
+            key-positions = <1 20>;
+            bindings = <&kp STAR>;
         };
 
         combo_5 {
             timeout-ms = <50>;
-            key-positions = <>;
-            bindings = <&kp N5>;
+            key-positions = <0 20>;
+            bindings = <&kp FSLH>;
         };
 
         combo_LGUI {
