@@ -90,43 +90,43 @@
 
         combo_right {
             timeout-ms = <50>;
-            key-positions = <15 16>;
+            key-positions = <26 27>;
             bindings = < &mkp MCLK >;
         };
 
         combo_LSHFT {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <36 37>;
             bindings = <&mkp RCLK>;
         };
 
         combo_LSH {
             timeout-ms = <50>;
-            key-positions = <38 14>;
+            key-positions = <14 15>;
             bindings = <&kp LSHFT>;
         };
 
         combo_2 {
             timeout-ms = <50>;
-            key-positions = <15 14>;
+            key-positions = <>;
             bindings = <&kp N2>;
         };
 
         combo_3 {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <>;
             bindings = <&kp N3>;
         };
 
         combo_4 {
             timeout-ms = <50>;
-            key-positions = <36 37>;
+            key-positions = <>;
             bindings = <&kp N4>;
         };
 
         combo_5 {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <>;
             bindings = <&kp N5>;
         };
 
@@ -228,7 +228,7 @@
 
         combo_01q {
             timeout-ms = <50>;
-            key-positions = <21 29>;
+            key-positions = <21 13>;
             bindings = <&kp MINUS>;
         };
 
