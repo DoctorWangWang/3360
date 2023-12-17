@@ -144,6 +144,7 @@ modcp: mod_copy {
  &kp LGUI  &kp LALT  &kp SPACE &kp ENTER                    &kp UP &kp SPACE    &kp C_AL_MY_COMPUTER  &kp LA(F4)     
 &kp LSHFT &none	 &mo 1	&kp LCTRL        &kp LEFT   &kp RIGHT &none &kp FSLH  
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
                 trackball-bindings = <&tmv>;
         };  
 
@@ -159,6 +160,7 @@ modcp: mod_copy {
    &trans     &trans     &trans    &trans                                    &trans     &trans     &trans    &trans     
       &trans   &none    &trans    &trans                                       &trans     &trans      &none    &trans     
             >;
+     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
                trackball-bindings = <&tmv_fine>;    
         };
 
@@ -172,6 +174,7 @@ modcp: mod_copy {
 		&none	&none 	&none	&none	&none	&none	&none	&none		
 		&none	&none	&none	&none	&none	&none	&none	&none	                                                                                       
          >;
+        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
                    trackball-bindings = <&tsl>;
         };
 
@@ -186,6 +189,7 @@ modcp: mod_copy {
 		&none	&none 	&none	&none	&none	&none	&none	&none		
 		&none	&none	&none	&none	&none	&none	&none	&none	                                                    
             >;
+   sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
                  trackball-bindings = <&tmv_x>;
         };
                               
