@@ -115,6 +115,11 @@ modcp: mod_copy {
             key-positions = <31 32>;
             bindings = <&mkp LCLK>;
         };
+        combo_2 {
+            timeout-ms = <50>;
+            key-positions = <14 50>;
+             bindings = <&mkp MCLK>;
+   };
              combo_RCLK {
             timeout-ms = <50>;
             key-positions = <33 34>;
