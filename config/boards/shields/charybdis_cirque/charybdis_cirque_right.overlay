@@ -20,7 +20,7 @@
 	status = "okay";
 };
 
-&spi0 {
+&nice_nano_spi {
     status = "okay";
 };
 
