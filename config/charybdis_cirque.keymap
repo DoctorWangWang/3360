@@ -155,13 +155,13 @@
 
         combo_U {
             timeout-ms = <45>;
-            key-positions = <8 9>;
-            bindings = <&mo 1>;
+            key-positions = <38 2>;
+            bindings = <&kp LEFT_SHIFT>;
         };
 
         combo_11 {
             timeout-ms = <40>;
-            key-positions = <20 21>;
+            key-positions = <>;
             bindings = <&mo 2>;
         };
 
@@ -307,7 +307,7 @@
 &td0                  &as LS(Q) Q  &as LS(W) W   &lt 2 E      &as LS(R) R      &as LS(T) T  &as LS(Y) Y  &as LS(U) U  &as LS(I) I  &as LS(O) O  &as LS(P) P  &mt LEFT_SHIFT EQUAL
 &mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D  &as LS(F) F      &as LS(G) G  &as LS(H) H  &as LS(J) J  &as LS(K) K  &as LS(L) L  &kp SEMI     &lt 3 SQT
 &kp CAPS              &as LS(Z) Z  &as LS(X) X   &as LS(C) C  &as LS(V) V      &as LS(B) B  &as LS(N) N  &as LS(M) M  &kp COMMA    &kp DOT      &kp FSLH     &kp BSLH
-                                   &kp LC(C)     &kp LC(V)    &kp BSPC         &kp SPACE    &lt 2 LEFT   &lt 1 RIGHT  &kp LBKT     &kp RBKT
+                                   &kp LC(C)     &kp LC(V)    &td1             &td2         &lt 2 LEFT   &lt 1 RIGHT  &kp LBKT     &kp RBKT
                                    &kp LEFT_ALT  &kp GRAVE    &mt LCTRL LSHFT  &lt 1 DEL    &kp UP       &kp EQUAL    &tog 1       &tog 1
             >;
 
