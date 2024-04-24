@@ -71,9 +71,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD1";
             #binding-cells = <0>;
-            bindings = <&lt 1 BSPC>, <&kp BSPC>;
+            bindings = <&lt 1 BSPC>, <&mt BSPC BSPC>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <130>;
         };
 
         td2: td2 {
