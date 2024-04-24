@@ -66,6 +66,23 @@
 
             mods = <(LGUI | RGUI)>;
         };
+
+        td1: td1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD1";
+            #binding-cells = <0>;
+            bindings = <&lt 1 BSPC>, <&kp BSPC>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td2: td2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&lt 2 SPACE>, <&kp SPACE>;
+        };
     };
 
     macros {
