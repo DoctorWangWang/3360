@@ -12,7 +12,7 @@
 #define MMV_R MOVE_HOR(650)
 
 &mmv {
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <300>;
     acceleration-exponent = <1>;
 };
 
@@ -24,8 +24,13 @@
 #define MWH_R SCROLL_HOR(10)
 
 &mwh {
-    time-to-max-speed-ms = <1000>;
+    time-to-max-speed-ms = <300>;
     acceleration-exponent = <0>;
+};
+
+&lt {
+    quick-tap-ms = <180>;
+    flavor = "tap-preferred";
 };
 
 #define DEFAULT 0
@@ -319,7 +324,7 @@
             label = "DEFAULT";
             bindings = <
 &td0                  &as LS(Q) Q  &as LS(W) W   &as LS(E) E  &as LS(R) R      &as LS(T) T   &as LS(Y) Y  &as LS(U) U  &as LS(I) I          &as LS(O) O        &as LS(P) P        &mt LEFT_SHIFT EQUAL
-&mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D  &as LS(F) F      &as LS(G) G   &as LS(H) H  &as LS(J) J  &as LS(K) K          &as LS(L) L        &as SEMI SEMI      &lt 3 SQT
+&mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D  &as LS(F) F      &as LS(G) G   &as LS(H) H  &as LS(J) J  &as LS(K) K          &as LS(L) L        &as LS(SEMI) SEMI  &lt 3 SQT
 &kp CAPS              &as LS(Z) Z  &as LS(X) X   &as LS(C) C  &as LS(V) V      &as LS(B) B   &as LS(N) N  &as LS(M) M  &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(FSLH) FSLH  &as LS(BSLH) BSLH
                                    &kp LC(C)     &kp LC(V)    &td1             &ltq 2 SPACE  &lt 2 LEFT   &lt 1 RIGHT  &as LS(LBKT) LBKT    &as LS(RBKT) RBKT
                                    &kp LEFT_ALT  &kp GRAVE    &mt LCTRL LSHFT  &lt 1 DEL     &kp UP       &kp EQUAL    &tog 1               &tog 1
