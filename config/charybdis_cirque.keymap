@@ -323,11 +323,11 @@
         default_layer {
             label = "DEFAULT";
             bindings = <
-&td0                  &as LS(Q) Q  &as LS(W) W   &as LS(E) E  &as LS(R) R      &as LS(T) T   &as LS(Y) Y  &as LS(U) U  &as LS(I) I          &as LS(O) O        &as LS(P) P        &mt LEFT_SHIFT EQUAL
-&mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D  &as LS(F) F      &as LS(G) G   &as LS(H) H  &as LS(J) J  &as LS(K) K          &as LS(L) L        &as LS(SEMI) SEMI  &lt 3 SQT
-&kp CAPS              &as LS(Z) Z  &as LS(X) X   &as LS(C) C  &as LS(V) V      &as LS(B) B   &as LS(N) N  &as LS(M) M  &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(FSLH) FSLH  &as LS(BSLH) BSLH
-                                   &kp LC(C)     &kp LC(V)    &td1             &ltq 2 SPACE  &lt 2 LEFT   &lt 1 RIGHT  &as LS(LBKT) LBKT    &as LS(RBKT) RBKT
-                                   &kp LEFT_ALT  &kp GRAVE    &mt LCTRL LSHFT  &lt 1 DEL     &kp UP       &kp EQUAL    &tog 1               &tog 1
+&td0                  &as LS(Q) Q  &as LS(W) W   &as LS(E) E  &as LS(R) R      &as LS(T) T  &as LS(Y) Y  &as LS(U) U  &as LS(I) I          &as LS(O) O        &as LS(P) P        &mt LEFT_SHIFT EQUAL
+&mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D  &as LS(F) F      &as LS(G) G  &as LS(H) H  &as LS(J) J  &as LS(K) K          &as LS(L) L        &as LS(SEMI) SEMI  &as LS(SQT) SQT
+&kp CAPS              &as LS(Z) Z  &as LS(X) X   &as LS(C) C  &as LS(V) V      &as LS(B) B  &as LS(N) N  &as LS(M) M  &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(FSLH) FSLH  &as LS(BSLH) BSLH
+                                   &kp LC(C)     &kp LC(V)    &lt 1 BSPC       &lt 2 SPACE  &lt 2 LEFT   &lt 1 RIGHT  &as LS(LBKT) LBKT    &as LS(RBKT) RBKT
+                                   &kp LEFT_ALT  &kp GRAVE    &mt LCTRL LSHFT  &lt 1 DEL    &kp UP       &kp EQUAL    &tog 1               &tog 1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
@@ -337,11 +337,11 @@
         number_layer {
             label = "NUMBER";
             bindings = <
-&kp ESC    &kp STAR   &kp N7     &kp N8     &kp N9    &kp FSLH   &kp F12         &kp F7     &kp F8   &kp F9   &none  &kp LS(UNDER)
-&kp ENTER  &kp MINUS  &kp N4     &kp N5     &kp N6    &kp DOT    &macro_email_g  &kp F4     &kp F5   &kp F6   &none  &kp MINUS
-&kp EQUAL  &kp PLUS   &kp N1     &kp N2     &kp N3    &kp N0     &none           &kp F1     &kp F2   &kp F3   &none  &none
-                      &kp LC(C)  &kp LC(V)  &kp BSPC  &kp SPACE  &kp LEFT        &kp RIGHT  &kp F10  &kp F11
-                      &trans     &none      &kp SEMI  &kp SEMI   &kp UP          &kp DOWN   &none    &none
+&kp ESC    &kp STAR   &kp N7     &kp N8     &kp N9    &kp FSLH    &kp F12         &kp F7     &kp F8   &kp F9   &none  &kp LS(UNDER)
+&kp ENTER  &kp MINUS  &kp N4     &kp N5     &kp N6    &kp PERIOD  &macro_email_g  &kp F4     &kp F5   &kp F6   &none  &kp MINUS
+&kp EQUAL  &kp PLUS   &kp N1     &kp N2     &kp N3    &kp N0      &none           &kp F1     &kp F2   &kp F3   &none  &none
+                      &kp LC(C)  &kp LC(V)  &kp BSPC  &kp SPACE   &kp LEFT        &kp RIGHT  &kp F10  &kp F11
+                      &trans     &none      &kp SEMI  &kp SEMI    &kp UP          &kp DOWN   &tog 1   &tog 1
             >;
 
             sensor-bindings =
