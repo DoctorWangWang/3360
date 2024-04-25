@@ -76,7 +76,7 @@
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
 
-            quick-tap-ms = <180>;
+            quick-tap-ms = <200>;
             global-quick-tap;
         };
 
