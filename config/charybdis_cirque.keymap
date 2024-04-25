@@ -337,11 +337,11 @@
         number_layer {
             label = "NUMBER";
             bindings = <
-&kp ESC    &kp STAR   &kp N7     &kp N8     &kp N9    &kp FSLH    &kp F12         &kp F7     &kp F8   &kp F9   &none  &kp LS(UNDER)
-&kp ENTER  &kp MINUS  &kp N4     &kp N5     &kp N6    &kp PERIOD  &macro_email_g  &kp F4     &kp F5   &kp F6   &none  &kp MINUS
-&kp EQUAL  &kp PLUS   &kp N1     &kp N2     &kp N3    &kp N0      &none           &kp F1     &kp F2   &kp F3   &none  &none
-                      &kp LC(C)  &kp LC(V)  &kp BSPC  &kp SPACE   &kp LEFT        &kp RIGHT  &kp F10  &kp F11
-                      &trans     &none      &kp SEMI  &kp SEMI    &kp UP          &kp DOWN   &tog 1   &tog 1
+&kp ESC    &kp STAR   &kp N7     &kp N8     &kp N9    &kp BSPC    &kp EQUAL  &kp F7     &kp F8   &kp F9   &kp F10  &kp LS(UNDER)
+&kp ENTER  &kp MINUS  &kp N4     &kp N5     &kp N6    &kp PERIOD  &kp EQUAL  &kp F4     &kp F5   &kp F6   &kp F11  &kp MINUS
+&kp FSLH   &kp PLUS   &kp N1     &kp N2     &kp N3    &kp N0      &kp EQUAL  &kp F1     &kp F2   &kp F3   &kp F12  &none
+                      &kp LC(C)  &kp LC(V)  &kp BSPC  &kp SPACE   &kp LEFT   &kp RIGHT  &kp F10  &kp F11
+                      &trans     &none      &kp SEMI  &kp SEMI    &kp UP     &kp DOWN   &tog 1   &tog 1
             >;
 
             sensor-bindings =
