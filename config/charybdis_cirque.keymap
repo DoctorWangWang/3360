@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD1";
             #binding-cells = <0>;
-            bindings = <&lt 1 BSPC>, <&mt BSPC BSPC>;
+            bindings = <&lt 3 BSPC>, <&tog 1>;
 
             tapping-term-ms = <200>;
         };
@@ -177,7 +177,7 @@
 &mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D          &as LS(F) F  &as LS(G) G    &as LS(H) H  &as LS(J) J  &as LS(K) K          &as LS(L) L        &as LS(SEMI) SEMI  &as LS(SQT) SQT
 &kp CAPS              &as LS(Z) Z  &as LS(X) X   &as LS(C) C          &as LS(V) V  &as LS(B) B    &as LS(N) N  &as LS(M) M  &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(FSLH) FSLH  &as LS(BSLH) BSLH
                                    &kp LC(C)     &kp LC(V)            &lt 1 BSPC   &lt 2 SPACE    &kp LEFT     &kp RIGHT    &as LS(LBKT) LBKT    &as LS(RBKT) RBKT
-                                   &kp LEFT_ALT  &as LS(GRAVE) GRAVE  &lt 3 DEL    &mt LCTRL TAB  &none        &none        &tog 1               &tog 1
+                                   &kp LEFT_ALT  &as LS(GRAVE) GRAVE  &lt 3 DEL    &mt LCTRL TAB  &none        &none        &td1                 &td1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
