@@ -120,43 +120,43 @@
 
         combo_left {
             timeout-ms = <50>;
-            key-positions = <2 38>;
+            key-positions = <2 1>;
             bindings = <&mkp LCLK>;
         };
 
         combo_right {
             timeout-ms = <50>;
-            key-positions = <38 2>;
+            key-positions = <36 37>;
             bindings = < &mkp MCLK >;
         };
 
         combo_LSHFT {
             timeout-ms = <50>;
-            key-positions = <3 38>;
+            key-positions = <3 4>;
             bindings = <&mkp RCLK>;
         };
 
         combo_LSH {
             timeout-ms = <50>;
-            key-positions = <39 2>;
+            key-positions = <14 15>;
             bindings = <&kp LSHFT>;
         };
 
         combo_LGUI {
             timeout-ms = <50>;
-            key-positions = <38 14>;
+            key-positions = <26 27>;
             bindings = <&kp LGUI>;
         };
 
         combo_GU {
             timeout-ms = <50>;
-            key-positions = <39 26>;
+            key-positions = <26 38>;
             bindings = <&tog 1>;
         };
 
         combo_GUI {
             timeout-ms = <50>;
-            key-positions = <39 14>;
+            key-positions = <15 16>;
             bindings = < &kp TAB >;
         };
 
