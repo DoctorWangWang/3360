@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD1";
             #binding-cells = <0>;
-            bindings = <&lt 3 BSPC>, <&tog 1>;
+            bindings = <&tog 1>, <&tog 3>;
 
             tapping-term-ms = <200>;
         };
@@ -120,7 +120,7 @@
 
         combo_left {
             timeout-ms = <50>;
-            key-positions = <2 1>;
+            key-positions = <2 3>;
             bindings = <&mkp LCLK>;
         };
 
@@ -150,7 +150,7 @@
 
         combo_GU {
             timeout-ms = <50>;
-            key-positions = <26 38>;
+            key-positions = <27 28>;
             bindings = <&tog 1>;
         };
 
@@ -173,11 +173,11 @@
         default_layer {
             label = "DEFAULT";
             bindings = <
-&kp ESC               &as LS(Q) Q  &as LS(W) W   &as LS(E) E          &as LS(R) R  &as LS(T) T    &as LS(Y) Y  &as LS(U) U  &as LS(I) I          &as LS(O) O        &as LS(P) P        &mt LEFT_SHIFT EQUAL
-&mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D          &as LS(F) F  &as LS(G) G    &as LS(H) H  &as LS(J) J  &as LS(K) K          &as LS(L) L        &as LS(SEMI) SEMI  &as LS(SQT) SQT
-&kp CAPS              &as LS(Z) Z  &as LS(X) X   &as LS(C) C          &as LS(V) V  &as LS(B) B    &as LS(N) N  &as LS(M) M  &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(FSLH) FSLH  &as LS(BSLH) BSLH
-                                   &kp LC(C)     &kp LC(V)            &lt 1 BSPC   &lt 2 SPACE    &kp LEFT     &kp RIGHT    &as LS(LBKT) LBKT    &as LS(RBKT) RBKT
-                                   &kp LEFT_ALT  &as LS(GRAVE) GRAVE  &lt 3 DEL    &mt LCTRL TAB  &none        &none        &td1                 &td1
+&kp ESC               &as LS(Q) Q  &as LS(W) W   &as LS(E) E          &as LS(R) R    &as LS(T) T   &as LS(Y) Y  &as LS(U) U  &as LS(I) I          &as LS(O) O        &as LS(P) P        &mt LEFT_SHIFT EQUAL
+&mt LEFT_SHIFT ENTER  &as LS(A) A  &as LS(S) S   &as LS(D) D          &as LS(F) F    &as LS(G) G   &as LS(H) H  &as LS(J) J  &as LS(K) K          &as LS(L) L        &as LS(SEMI) SEMI  &as LS(SQT) SQT
+&kp CAPS              &as LS(Z) Z  &as LS(X) X   &as LS(C) C          &as LS(V) V    &as LS(B) B   &as LS(N) N  &as LS(M) M  &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(FSLH) FSLH  &as LS(BSLH) BSLH
+                                   &kp LC(C)     &kp LC(V)            &lt 1 BSPC     &lt 2 SPACE   &kp LEFT     &kp RIGHT    &as LS(LBKT) LBKT    &as LS(RBKT) RBKT
+                                   &kp LEFT_ALT  &as LS(GRAVE) GRAVE  &mt LCTRL TAB  &lt 3 DELETE  &none        &none        &td1                 &td1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
@@ -187,11 +187,11 @@
         number_layer {
             label = "NUMBER";
             bindings = <
-&kp ESC    &kp STAR   &kp N7     &kp N8     &kp N9    &kp BSPC    &kp EQUAL     &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)   &kp LS(RPAR)  &kp EQUAL
-&kp ENTER  &kp MINUS  &kp N4     &kp N5     &kp N6    &kp PERIOD  &kp LBKT      &kp RBKT      &kp LS(PRCNT)  &kp LS(CARET)  &kp SEMI      &kp SEMI
-&kp FSLH   &kp PLUS   &kp N1     &kp N2     &kp N3    &kp N0      &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(AT)     &kp LS(POUND)  &kp SEMI      &kp SEMI
-                      &kp LC(C)  &kp LC(V)  &kp BSPC  &kp SPACE   &kp LEFT      &kp RIGHT     &kp LS(EXCL)   &kp LS(EXCL)
-                      &trans     &none      &kp SEMI  &kp TAB     &kp N2        &kp N2        &tog 1         &tog 1
+&kp ESC    &kp STAR   &kp N7     &kp N8     &kp N9    &kp BSPC    &kp LS(LPAR)  &kp LS(RPAR)  &kp BSPC      &kp EQUAL     &kp EQUAL  &kp EQUAL
+&kp ENTER  &kp MINUS  &kp N4     &kp N5     &kp N6    &kp PERIOD  &kp LBKT      &kp RBKT      &kp LEFT      &kp RIGHT     &kp SEMI   &kp SEMI
+&kp FSLH   &kp PLUS   &kp N1     &kp N2     &kp N3    &kp N0      &kp LS(LBRC)  &kp LS(RBRC)  &kp UP        &kp DOWN      &kp SEMI   &kp SEMI
+                      &kp LC(C)  &kp LC(V)  &kp BSPC  &kp SPACE   &kp LEFT      &kp RIGHT     &kp LS(EXCL)  &kp LS(EXCL)
+                      &trans     &none      &tog 1    &kp TAB     &kp N2        &kp N2        &tog 1        &tog 1
             >;
 
             sensor-bindings =
@@ -220,11 +220,11 @@
         hotkey_layer {
             label = "HOTKEY";
             bindings = <
-&kp ESC  &kp N3  &kp F7  &kp F8  &kp F9  &kp F10  &bt BT_CLR    &kp N3  &kp N3  &kp N3  &bt BT_SEL 0  &none
-&kp ESC  &kp N3  &kp F4  &kp F5  &kp F6  &kp F11  &out OUT_USB  &none   &none   &none   &none         &none
-&kp ESC  &kp N3  &kp F1  &kp F2  &kp F3  &kp F12  &out OUT_BLE  &none   &none   &none   &none         &none
-                 &none   &none   &none   &none    &none         &none   &none   &none
-                 &none   &none   &none   &none    &none         &none   &none   &none
+&kp ESC  &kp N3       &kp F7  &kp F8  &kp F9  &kp F10  &bt BT_CLR    &kp N3  &kp N3       &kp N3  &bt BT_SEL 0  &bt BT_SEL 0
+&kp ESC  &reset       &kp F4  &kp F5  &kp F6  &kp F11  &out OUT_USB  &none   &reset       &none   &none         &none
+&kp ESC  &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &out OUT_BLE  &none   &bootloader  &none   &none         &none
+                      &none   &none   &none   &none    &none         &none   &none        &none
+                      &none   &none   &none   &none    &none         &none   &tog 3       &tog 3
             >;
 
             trackball-bindings = <&tmv_x>;
