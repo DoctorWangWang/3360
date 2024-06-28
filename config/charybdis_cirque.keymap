@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
 // mouse move settings
@@ -130,12 +130,13 @@
             bindings = <&mkp RCLK>;
         };
 
-              combo_LCLK1 {
+        combo_LCLK1 {
             timeout-ms = <50>;
             key-positions = <31 32>;
             bindings = <&mkp LCLK>;
         };
-             combo_RCLK1 {
+
+        combo_RCLK1 {
             timeout-ms = <50>;
             key-positions = <33 34>;
             bindings = <&mkp RCLK>;
@@ -153,7 +154,7 @@
 &kp BSPC  &kp A   &kp S      &kp D     &kp F      &kp G      &kp H     &kp J      &kp K                 &kp L     &kp SEMI   &lt 2 SQT
 &kp TAB   &kp Z   &kp X      &kp C     &kp V      &kp B      &kp N     &kp M      &kp COMMA             &kp DOT   &kp MINUS  &kp EQUAL
                   &kp LGUI   &kp LALT  &kp SPACE  &kp ENTER  &kp UP    &kp SPACE  &kp C_AL_MY_COMPUTER  &kp FSLH
-                  &kp LSHFT  &none     &mo 1      &kp LCTRL  &kp LEFT  &kp RIGHT  &none                 &kp FSLH
+                  &kp LSHFT  &none     &mo 1      &kp LCTRL  &kp LEFT  &kp RIGHT  &kp DOWN              &kp FSLH
             >;
 
             sensor-bindings =
@@ -191,21 +192,6 @@
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
             trackball-bindings = <&tsl>;
-        };
-
-        hotkey_layer {
-            label = "HOTKEY";
-            bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&reset        &none         &none         &none         &none         &out OUT_USB  &out OUT_USB  &none         &none         &none         &none         &reset
-&none         &none         &none         &none         &none         &out OUT_BLE  &out OUT_BLE  &none         &none         &none         &none         &none
-&none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &none
-                            &none         &none         &none         &none         &none         &none         &none         &none
-                            &none         &none         &none         &none         &none         &none         &none         &none
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
-            trackball-bindings = <&tmv_x>;
         };
 
         mouse_layer {
