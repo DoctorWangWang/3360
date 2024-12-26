@@ -1,10 +1,10 @@
 manifest:
   remotes:
-    - name: zmkfirmware
+    - name: zmk
       url-base: https://github.com/DoctorWangWang
   projects:
     - name: zmk
-      remote: DoctorWangWang
+      remote: zmkfirmware
       revision: ptdevice-alpotato
       import: app/west.yml
   self:
