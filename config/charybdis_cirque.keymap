@@ -220,7 +220,7 @@
 &kp ESC  &reset       &kp F4  &kp F5  &kp F6  &kp F11  &out OUT_USB  &none   &reset       &none   &none         &none
 &kp ESC  &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &out OUT_BLE  &none   &bootloader  &none   &none         &none
                       &none   &none   &none   &none    &none         &none   &none        &none
-                      &none   &none   &none   &none    &none         &none   &mo 3        &mo 3
+                      &none   &none   &none   &none    &kp NUMBER_3  &none   &mo 3        &mo 3
             >;
 
             trackball-bindings = <&tmv_x>;
