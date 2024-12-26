@@ -1,6 +1,6 @@
 manifest:
   remotes:
-    - name: DoctorWangWang
+    - name: zmkfirmware
       url-base: https://github.com/DoctorWangWang
   projects:
     - name: zmk
