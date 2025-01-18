@@ -50,7 +50,7 @@ behaviors {
         rgb_encoder: rgb_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&mwh MWH_U>, <&mwh MWH_U>;
+            bindings = <&mwh MWH_U>, <&mwh MWH_D>;
         };
     };
     behaviors {
@@ -163,9 +163,7 @@ behaviors {
                   &kp LSHFT  &none     &mo 1      &kp LCTRL  &kp LEFT  &kp RIGHT  &kp DOWN              &kp FSLH
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp UP DOWN>;
+      sensor-bindings = <&rgb_encoder &rgb_encoder>;
 
             trackball-bindings = <&tmv>;
         };
