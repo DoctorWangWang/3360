@@ -157,7 +157,7 @@
                   &kp LSHFT  &none     &mo 1      &kp LCTRL  &kp LEFT  &kp RIGHT  &kp DOWN              &kp FSLH
             >;
 
-   sensor-bindings = <&inc_dec_kp MWH_U MWH_U &inc_dec_kp MWH_U MWH_U>;
+   sensor-bindings = <&inc_dec_kp MWH_U MWH_U &inc_dec_kp MWH_U MWH_D>;
 
             trackball-bindings = <&tmv>;
         };
