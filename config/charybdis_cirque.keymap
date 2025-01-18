@@ -46,13 +46,7 @@
             bindings = <&kp ESC>, <&kp TAB>;
         };
     };
-behaviors {
-        rgb_encoder: rgb_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&mwh MWH_U>, <&mwh MWH_D>;
-        };
-    };
+
     behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
