@@ -163,7 +163,7 @@ behaviors {
                   &kp LSHFT  &none     &mo 1      &kp LCTRL  &kp LEFT  &kp RIGHT  &kp DOWN              &kp FSLH
             >;
 
-      sensor-bindings = <&rgb_encoder &rgb_encoder>;
+      sensor-bindings = <&rgb_encoder>;
 
             trackball-bindings = <&tmv>;
         };
