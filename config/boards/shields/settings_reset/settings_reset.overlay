@@ -21,26 +21,3 @@
 	};
 
 };
-
-/*
- * no-SoftDevice (MBR-only) bootloader 布局 —— 应用从 0x1000 启动。
- */
-/delete-node/ &sd_partition;
-/delete-node/ &code_partition;
-/delete-node/ &storage_partition;
-
-&flash0 {
-    partitions {
-        sd_partition: partition@0 {
-            reg = <0x0 0x1000>;
-        };
-        code_partition: partition@1000 {
-            label = "code_partition";
-            reg = <0x1000 0xd3000>;
-        };
-        storage_partition: partition@d4000 {
-            label = "storage";
-            reg = <0xd4000 0x20000>;
-        };
-    };
-};

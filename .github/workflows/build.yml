@@ -1,9 +1,9 @@
 name: Build ZMK firmware
 
-# 说明：
-# 不再引用 zmkfirmware/zmk 的 reusable workflow，避免 ZMK 官网/上游更新把构建环境（容器镜像、
-# west 版本、Zephyr SDK）悄悄换掉，导致同样的源码编译出行为不同的固件。
-# 这里固定使用 Zephyr 3.5 / SDK 0.16.3 的镜像，与本仓库 ptdevice 分支（Zephyr 3.0 时代）匹配。
+# charybdis_cirque (3360) — 官方 ZMK v0.3（Zephyr 3.5）+ 官方 ZMK Studio
+#
+# 固定使用官方 3.5 镜像（Zephyr 3.5 / SDK 0.16.3），不引用 reusable workflow，
+# 避免上游更新把构建环境悄悄换掉。PMW3360 驱动经 west 项目（KOHSUK）引入。
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
@@ -17,10 +17,13 @@ jobs:
         include:
           - board: nice_nano_v2
             shield: charybdis_cirque_left
+            snippet: nrf52840-nosd
           - board: nice_nano_v2
             shield: charybdis_cirque_right
+            snippet: nrf52840-nosd studio-rpc-usb-uart
           - board: nice_nano_v2
             shield: settings_reset
+            snippet: nrf52840-nosd
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,7 +41,8 @@ jobs:
         run: |
           west build -s zmk/app -d "build/${{ matrix.shield }}" -p always \
             -b ${{ matrix.board }} \
-            -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="$GITHUB_WORKSPACE/config"
+            -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="$GITHUB_WORKSPACE/config" \
+               -DSNIPPET="${{ matrix.snippet }}"
 
       - name: Upload firmware
         uses: actions/upload-artifact@v4

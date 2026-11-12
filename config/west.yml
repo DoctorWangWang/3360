@@ -1,13 +1,25 @@
+# charybdis_cirque (3360) — 官方 ZMK v0.3（Zephyr 3.5）+ 官方 ZMK Studio
+#
+# 从 ptdevice 旧 fork（Zephyr 3.0）迁移到官方 zmkfirmware/zmk v0.3（Zephyr 3.5），
+# 以支持官方 ZMK Studio（https://zmk.studio）在线改键。
+#
+# PMW3360 轨迹球：官方 ZMK 未内置该传感器驱动，这里引入社区模块
+# KOHSUK/zmk-pmw3360-driver（要求 Zephyr >= 3.5，compatible "pixart,pmw3360"，
+# 配置符号 CONFIG_PMW3360=y）。
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/DoctorWangWang
+      url-base: https://github.com/zmkfirmware
+    - name: KOHSUK
+      url-base: https://github.com/KOHSUK
   projects:
     - name: zmk
       remote: zmkfirmware
-      # 固定到具体 commit，避免分支被改动/强推后编译出不同固件
-      # 原值：ptdevice-alpotato
-      revision: 12da75148d8a03bd1f3d829ac730d6679131a34d
+      # 固定到 v0.3（Zephyr 3.5），保证编译环境稳定、可复现。
+      revision: v0.3
       import: app/west.yml
+    - name: zmk-pmw3360-driver
+      remote: KOHSUK
+      revision: 4cf44865b2d7589886c2c8b6331e8c7f323543d4
   self:
     path: config

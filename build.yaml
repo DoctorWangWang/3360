@@ -1,21 +1,21 @@
-# This file generates the GitHub Actions matrix
-# For simple board + shield combinations, add them
-# to the top level board and shield arrays, for more
-# control, add individual board + shield combinations to
-# the `include` property, e.g:
+# charybdis_cirque (3360) — 构建矩阵
 #
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
+# board 使用 nice_nano_v2（ZMK v0.3 / Zephyr 3.5 的官方 board 名）。
 #
+# snippet 说明：
+#   - nrf52840-nosd      ：适配 no-SoftDevice（MBR-only）bootloader，应用从 0x1000 启动。
+#                          本键盘的 Adafruit nRF52 bootloader 是 no-SoftDevice 版本
+#                          （INFO_UF2.TXT 里 SoftDevice: not found），必须加这个。
+#   - studio-rpc-usb-uart：提供 ZMK Studio 的 USB CDC-ACM 端点，让 https://zmk.studio
+#                          能通过 USB 连接右侧（central）半在线改键。
 ---
 include:
   - board: nice_nano_v2
     shield: charybdis_cirque_left
+    snippet: nrf52840-nosd
   - board: nice_nano_v2
     shield: charybdis_cirque_right
+    snippet: nrf52840-nosd studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: settings_reset
+    snippet: nrf52840-nosd
