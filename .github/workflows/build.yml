@@ -1,5 +1,48 @@
+name: Build ZMK firmware
+
+# 说明：
+# 不再引用 zmkfirmware/zmk 的 reusable workflow，避免 ZMK 官网/上游更新把构建环境（容器镜像、
+# west 版本、Zephyr SDK）悄悄换掉，导致同样的源码编译出行为不同的固件。
+# 这里固定使用 Zephyr 3.5 / SDK 0.16.3 的镜像，与本仓库 ptdevice 分支（Zephyr 3.0 时代）匹配。
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:3.5
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - board: nice_nano_v2
+            shield: charybdis_cirque_left
+          - board: nice_nano_v2
+            shield: charybdis_cirque_right
+          - board: nice_nano_v2
+            shield: settings_reset
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: West init
+        run: west init -l config
+
+      - name: West update
+        run: west update
+
+      - name: West zephyr export
+        run: west zephyr-export
+
+      - name: Build ${{ matrix.shield }}
+        run: |
+          west build -s zmk/app -d "build/${{ matrix.shield }}" -p always \
+            -b ${{ matrix.board }} \
+            -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="$GITHUB_WORKSPACE/config"
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.shield }}-${{ matrix.board }}-zmk
+          path: build/${{ matrix.shield }}/zephyr/zmk.uf2
+          if-no-files-found: error

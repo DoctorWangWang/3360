@@ -106,3 +106,29 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6)  RC(2,7) RC(2,8) RC(2,9
         prechargep = <0x22>;
     };
 };
+
+/*
+ * no-SoftDevice (MBR-only) bootloader 布局 —— 应用从 0x1000 启动。
+ * 板子的 Adafruit nRF52 bootloader 是 no-SoftDevice 版本（INFO_UF2.TXT 里
+ * SoftDevice: not found），必须用 0x1000 布局，否则固件刷进去无法启动。
+ * 原默认布局（S140 v6）：sd_partition 占 0x0-0x26000，应用从 0x26000 启动。
+ */
+/delete-node/ &sd_partition;
+/delete-node/ &code_partition;
+/delete-node/ &storage_partition;
+
+&flash0 {
+    partitions {
+        sd_partition: partition@0 {
+            reg = <0x0 0x1000>;
+        };
+        code_partition: partition@1000 {
+            label = "code_partition";
+            reg = <0x1000 0xd3000>;
+        };
+        storage_partition: partition@d4000 {
+            label = "storage";
+            reg = <0xd4000 0x20000>;
+        };
+    };
+};

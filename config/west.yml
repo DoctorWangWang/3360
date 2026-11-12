@@ -5,7 +5,9 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: ptdevice-alpotato
+      # 固定到具体 commit，避免分支被改动/强推后编译出不同固件
+      # 原值：ptdevice-alpotato
+      revision: 12da75148d8a03bd1f3d829ac730d6679131a34d
       import: app/west.yml
   self:
     path: config

@@ -1,0 +1,46 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+	};
+
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-direct";
+		label = "KSCAN";
+
+		input-gpios
+			= <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			;
+	};
+
+};
+
+/*
+ * no-SoftDevice (MBR-only) bootloader 布局 —— 应用从 0x1000 启动。
+ */
+/delete-node/ &sd_partition;
+/delete-node/ &code_partition;
+/delete-node/ &storage_partition;
+
+&flash0 {
+    partitions {
+        sd_partition: partition@0 {
+            reg = <0x0 0x1000>;
+        };
+        code_partition: partition@1000 {
+            label = "code_partition";
+            reg = <0x1000 0xd3000>;
+        };
+        storage_partition: partition@d4000 {
+            label = "storage";
+            reg = <0xd4000 0x20000>;
+        };
+    };
+};
