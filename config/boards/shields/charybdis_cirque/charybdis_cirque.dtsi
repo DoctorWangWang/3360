@@ -58,16 +58,16 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6)  RC(2,7) RC(2,8) RC(2,9
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
     };
-};
 
-/*
- * 轨迹球 input-listener：把 PMW3360 传感器的 input 事件（INPUT_REL_X/Y）
- * 接入 ZMK 输入子系统，经默认 pointing 输出映射为鼠标移动。
- */
-trackball_listener {
-    compatible = "zmk,input-listener";
-    status = "okay";
-    device = <&trackball>;
+    /*
+     * 轨迹球 input-listener：把 PMW3360 传感器的 input 事件（INPUT_REL_X/Y）
+     * 接入 ZMK 输入子系统，经默认 pointing 输出映射为鼠标移动。
+     */
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>;
+    };
 };
 
 /*
