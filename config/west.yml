@@ -4,14 +4,15 @@
 # 以支持官方 ZMK Studio（https://zmk.studio）在线改键。
 #
 # PMW3360 轨迹球：官方 ZMK 未内置该传感器驱动，这里引入社区模块
-# KOHSUK/zmk-pmw3360-driver（要求 Zephyr >= 3.5，compatible "pixart,pmw3360"，
-# 配置符号 CONFIG_PMW3360=y）。
+# DoctorWangWang/zmk-pmw3360-driver（上游 KOHSUK/zmk-pmw3360-driver，branch pmw3360）。
+# 要求 Zephyr >= 3.5，compatible "pixart,pmw3360"，配置符号 CONFIG_PMW3360=y。
+# 用自己的仓库引用，避免上游改动/删除导致编译失败。
 manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: KOHSUK
-      url-base: https://github.com/KOHSUK
+    - name: DoctorWangWang
+      url-base: https://github.com/DoctorWangWang
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,7 +20,7 @@ manifest:
       revision: v0.3
       import: app/west.yml
     - name: zmk-pmw3360-driver
-      remote: KOHSUK
+      remote: DoctorWangWang
       revision: 4cf44865b2d7589886c2c8b6331e8c7f323543d4
   self:
     path: config
